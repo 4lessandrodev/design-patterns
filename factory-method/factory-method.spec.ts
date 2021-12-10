@@ -2,7 +2,7 @@ import { clientCode, ConcreteCreator1, ConcreteCreator2 } from "./index";
 import { clientDelivery, BikeCreator, TruckCreator } from './my-factory-method';
 
 describe('factory-method', (): void => {
-	it('should create a valid instance', (): void => {
+	it('should execute factory method with success', (): void => {
 		/**
 		 * The Application picks a creator's type depending on the configuration or
 		 * environment.
@@ -15,8 +15,11 @@ describe('factory-method', (): void => {
 		clientCode(new ConcreteCreator2());
 	})
 
-	it('should create car delivery', () => {
+	it('should execute bike delivery', () => {
 		clientDelivery(new BikeCreator()); // Delivery by bike
+	})
+
+	it('should execute truck delivery', () => {
 		clientDelivery(new TruckCreator()); // Delivery by truck
 	})
 })

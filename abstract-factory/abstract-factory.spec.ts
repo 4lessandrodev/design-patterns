@@ -1,4 +1,5 @@
-import { ConcreteFactory1, ConcreteFactory2, clientCode} from './index'
+import { ConcreteFactory1, ConcreteFactory2, clientCode } from './index';
+import { Creator, clientCode as client } from './my-abstract-factory';
 
 describe('abstract-factory', (): void => {
 	it('should execute abstract factory', (): void => {
@@ -12,5 +13,9 @@ describe('abstract-factory', (): void => {
 
 		console.log('Client: Testing the same client code with the second factory type...');
 		clientCode(new ConcreteFactory2());
+	});
+
+	it('should create different products from factory', (): void => {
+		client(new Creator());
 	})
 })
