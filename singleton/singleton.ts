@@ -22,6 +22,9 @@ export class Connection implements IConnection {
 		this.data.push(data);
 	}
 
+	/**
+	 * returns total of instances
+	 */
 	get total() {
 		return Connection.total;
 	}
