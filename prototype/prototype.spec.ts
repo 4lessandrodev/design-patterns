@@ -1,4 +1,4 @@
-import { Car } from './prototype-method';
+import { Car } from './prototype';
 
 describe('prototype-method', () => {
 	it('should create a clone', () => {
