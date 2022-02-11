@@ -66,7 +66,7 @@ export class Cart extends Order {
 		console.log(isFruit ? '[Fruit]: added on cart' : isBasket ? '[FruitBasket]: added on cart' : '');
 	}
 
-	addItem(item: Item): void {
+	public addItem(item: Item): void {
 		this.log(item);
 		this.items.push(item);
 	}

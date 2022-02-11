@@ -1,4 +1,4 @@
-import { ClientCode, ExtendedGUIAbstraction, GUIAbstraction, RadioController, TVController } from "./bridge";
+import { ClientCode, ExtendedGUIAbstraction, GUIAbstraction, RadioController, TVController } from "./use-case";
 
 describe('bridge design pattern', () => {
 

@@ -1,4 +1,4 @@
-import { Cart, clientCode } from "./composite";
+import { Cart, clientCode } from "./use-case";
 
 describe('composite', () => {
 	it('shout add differents products on cart and calculate total', () => {

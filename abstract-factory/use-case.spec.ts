@@ -1,5 +1,5 @@
-import { ConcreteFactory1, ConcreteFactory2, clientCode } from './index';
-import { Creator, clientCode as client } from './my-abstract-factory';
+import { ConcreteFactory1, ConcreteFactory2, clientCode } from './example';
+import { Creator, clientCode as client } from './use-case';
 
 describe('abstract-factory', (): void => {
 	it('should execute abstract factory', (): void => {

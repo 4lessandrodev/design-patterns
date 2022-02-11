@@ -1,4 +1,4 @@
-import { XmlToJsonAdapter } from "./adapter"
+import { XmlToJsonAdapter } from "./use-case"
 
 describe('adapter', () => {
 	it("should adapt", () => {

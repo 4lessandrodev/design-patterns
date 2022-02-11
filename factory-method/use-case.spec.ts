@@ -1,5 +1,5 @@
-import { clientCode, ConcreteCreator1, ConcreteCreator2 } from "./index";
-import { clientDelivery, BikeCreator, TruckCreator } from './my-factory-method';
+import { clientCode, ConcreteCreator1, ConcreteCreator2 } from "./example";
+import { clientDelivery, BikeCreator, TruckCreator } from './use-case';
 
 describe('factory-method', (): void => {
 	it('should execute factory method with success', (): void => {

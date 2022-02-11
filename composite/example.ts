@@ -2,19 +2,19 @@
  * The base Component class declares common operations for both simple and
  * complex objects of a composition.
  */
- abstract class Component {
-    protected parent: Component;
+ abstract class IComponent {
+    protected parent: IComponent | undefined;
 
     /**
      * Optionally, the base Component can declare an interface for setting and
      * accessing a parent of the component in a tree structure. It can also
      * provide some default implementation for these methods.
      */
-    public setParent(parent: Component) {
+    public setParent(parent?: IComponent) {
         this.parent = parent;
     }
 
-    public getParent(): Component {
+    public getParent(): IComponent | undefined {
         return this.parent;
     }
 
@@ -25,9 +25,9 @@
      * object tree assembly. The downside is that these methods will be empty
      * for the leaf-level components.
      */
-    public add(component: Component): void { }
+    public add(component: IComponent): void { }
 
-    public remove(component: Component): void { }
+    public remove(component: IComponent): void { }
 
     /**
      * You can provide a method that lets the client code figure out whether a
@@ -52,7 +52,7 @@
  * Usually, it's the Leaf objects that do the actual work, whereas Composite
  * objects only delegate to their sub-components.
  */
-class Leaf extends Component {
+class Leaf extends IComponent {
     public operation(): string {
         return 'Leaf';
     }
@@ -63,23 +63,23 @@ class Leaf extends Component {
  * Usually, the Composite objects delegate the actual work to their children and
  * then "sum-up" the result.
  */
-class Composite extends Component {
-    protected children: Component[] = [];
+class Composite extends IComponent {
+    protected children: IComponent[] = [];
 
     /**
      * A composite object can add or remove other components (both simple or
      * complex) to or from its child list.
      */
-    public add(component: Component): void {
+    public add(component: IComponent): void {
         this.children.push(component);
         component.setParent(this);
     }
 
-    public remove(component: Component): void {
+    public remove(component: IComponent): void {
         const componentIndex = this.children.indexOf(component);
         this.children.splice(componentIndex, 1);
 
-        component.setParent(null);
+        component.setParent();
     }
 
     public isComposite(): boolean {
@@ -105,7 +105,7 @@ class Composite extends Component {
 /**
  * The client code works with all of the components via the base interface.
  */
-function clientCode(component: Component) {
+function clientCode(component: IComponent) {
     // ...
 
     console.log(`RESULT: ${component.operation()}`);
@@ -116,9 +116,9 @@ function clientCode(component: Component) {
 /**
  * This way the client code can support the simple leaf components...
  */
-const simple = new Leaf();
+const simpleComponent = new Leaf();
 console.log('Client: I\'ve got a simple component:');
-clientCode(simple);
+clientCode(simpleComponent);
 console.log('');
 
 /**
@@ -141,7 +141,7 @@ console.log('');
  * base Component class, the client code can work with any component, simple or
  * complex, without depending on their concrete classes.
  */
-function clientCode2(component1: Component, component2: Component) {
+function clientCode2(component1: IComponent, component2: IComponent) {
     // ...
 
     if (component1.isComposite()) {
@@ -153,4 +153,4 @@ function clientCode2(component1: Component, component2: Component) {
 }
 
 console.log('Client: I don\'t need to check the components classes even when managing the tree:');
-clientCode2(tree, simple);
+clientCode2(tree, simpleComponent);
