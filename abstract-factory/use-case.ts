@@ -1,43 +1,49 @@
-interface IApple { 
+interface IFruit { 
 	price: number;
 	quantity: number;
 	color: string;
 }
 
-interface IBanana {
-	price: number;
-	quantity: number;
-	color: string;
+interface Fruit extends IFruit {
+	getName():string
 }
 
 interface ICreator {
 
-	createBanana(props: IBanana): IBanana;
-	createApple(props: IApple): IApple;
+	createBanana(props: IFruit): Fruit;
+	createApple(props: IFruit): Fruit;
 
 }
 
-class Apple implements IApple {
+class Apple implements Fruit {
 	constructor(
 		public price: number,
 		public quantity: number,
 		public color: string,
-	){}
+	) { }
+	
+	getName(): string {
+		return 'This fruit is an Apple';
+	}
 }
 
-class Banana implements IBanana {
+class Banana implements Fruit {
 	constructor(
 		public price: number,
 		public quantity: number,
 		public color: string,
-	){}
+	) { }
+	
+	getName(): string {
+		return 'This fruit is a Banana';
+	}
 }
 
 export class Creator implements ICreator {
-	createBanana({ price, color, quantity }: IBanana): IBanana {
+	createBanana({ price, color, quantity }: IFruit): Fruit {
 		return new Banana(price, quantity, color);
 	}
-	createApple({ price, color, quantity }: IApple): IApple {
+	createApple({ price, color, quantity }: IFruit): Fruit {
 		return new Apple(price, quantity, color)
 	}
 }
@@ -50,6 +56,7 @@ export const clientCode = (creator: ICreator): void => {
 	});
 
 	console.log(apple);
+	console.log(apple.getName());
 
 	const banana = creator.createBanana({
 		color: 'yellow',
@@ -58,4 +65,5 @@ export const clientCode = (creator: ICreator): void => {
 	});
 
 	console.log(banana);
+	console.log(banana.getName());
 }
