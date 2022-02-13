@@ -1,3 +1,4 @@
+/** Interfaces */
 interface IFruit { 
 	price: number;
 	quantity: number;
@@ -15,6 +16,7 @@ interface ICreator {
 
 }
 
+/** Implementation */
 class Apple implements Fruit {
 	constructor(
 		public price: number,
@@ -48,6 +50,7 @@ export class Creator implements ICreator {
 	}
 }
 
+/** Client code. How to use it */
 export const clientCode = (creator: ICreator): void => {
 	const apple = creator.createApple({
 		color: 'red',
