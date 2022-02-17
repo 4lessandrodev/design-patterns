@@ -129,3 +129,17 @@
 * Logging requests (logging proxy). This is when you want to keep a history of requests to the service object.
 * Caching request results (caching proxy). This is when you need to cache results of client requests and manage the life cycle of this cache, especially if results are quite large.
 * Smart reference. This is when you need to be able to dismiss a heavyweight object once there are no clients that use it.
+
+> 
+### Behavioral Patterns
+---
+#### Chain of Responsibility
+
+<img src="./assets/chain-of-responsibility.png" width="100%">
+
+
+> Chain of Responsibility is a behavioral design pattern that lets you pass requests along a chain of handlers. Upon receiving a request, each handler decides either to process the request or to pass it to the next handler in the chain.
+
+* Use the Chain of Responsibility pattern when your program is expected to process different kinds of requests in various ways, but the exact types of requests and their sequences are unknown beforehand.
+* Use the pattern when it’s essential to execute several handlers in a particular order.
+* Use the CoR pattern when the set of handlers and their order are supposed to change at runtime.
