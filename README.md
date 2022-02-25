@@ -143,3 +143,15 @@
 * Use the Chain of Responsibility pattern when your program is expected to process different kinds of requests in various ways, but the exact types of requests and their sequences are unknown beforehand.
 * Use the pattern when it’s essential to execute several handlers in a particular order.
 * Use the CoR pattern when the set of handlers and their order are supposed to change at runtime.
+
+---
+#### Command
+
+<img src="./assets/command.png" width="100%">
+
+
+> Command is a behavioral design pattern that turns a request into a stand-alone object that contains all information about the request. This transformation lets you pass requests as a method arguments, delay or queue a request’s execution, and support undoable operations.
+
+* Use the Command pattern when you want to parametrize objects with operations.
+* Use the Command pattern when you want to queue operations, schedule their execution, or execute them remotely.
+* Use the Command pattern when you want to implement reversible operations.
