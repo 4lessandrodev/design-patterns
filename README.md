@@ -155,3 +155,89 @@
 * Use the Command pattern when you want to parametrize objects with operations.
 * Use the Command pattern when you want to queue operations, schedule their execution, or execute them remotely.
 * Use the Command pattern when you want to implement reversible operations.
+
+---
+
+#### Iterator
+
+<img src="./assets/iterator.png" width="100%">
+
+
+> Iterator is a behavioral design pattern that allows sequential traversal through a complex data structure without exposing its internal details.
+
+* Use the Iterator pattern when your collection has a complex data structure under the hood, but you want to hide its complexity from clients (either for convenience or security reasons).
+* Use the pattern to reduce duplication of the traversal code across your app.
+* Use the Iterator when you want your code to be able to traverse different data structures or when types of these structures are unknown beforehand.
+
+---
+
+#### Mediator
+
+<img src="./assets/mediator.png" width="100%">
+
+> ...
+
+* ...
+
+---
+
+#### Memento
+
+<img src="./assets/memento.png" width="100%">
+
+> ...
+
+* ...
+
+---
+
+#### Observer
+
+<img src="./assets/observer.png" width="100%">
+
+> ...
+
+* ...
+
+---
+
+#### State
+
+<img src="./assets/state.png" width="100%">
+
+> ...
+
+* ...
+
+---
+
+
+#### Strategy
+
+<img src="./assets/strategy.png" width="100%">
+
+> ...
+
+* ...
+
+---
+
+#### Template Method
+
+<img src="./assets/template-method.png" width="100%">
+
+> ...
+
+* ...
+
+---
+
+#### Visitor
+
+<img src="./assets/visitor.png" width="100%">
+
+> ...
+
+* ...
+
+---
